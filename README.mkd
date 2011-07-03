@@ -14,7 +14,7 @@ files/stdin with full syntax highlighting and vim functionality.
 * `less.vim` : improved version of the `less.vim` script distributed with vim.
   See contents of files for details.
 
-MIT License for `m`
+MIT License for 'm'
 -------------------
 Copyright (C) 2011 Huy Z  http://huyz.us/
 
