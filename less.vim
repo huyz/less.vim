@@ -62,6 +62,10 @@ set nows
 let s:lz = &lz
 set lz
 
+" huyz 2011-07-04 Add some more sane options
+set ts=8
+set nomodeline modelines=0
+
 " Used after each command: put cursor at end and display position
 if &wrap
   noremap <SID>L L0:redraw<CR>:file<CR>
@@ -69,14 +73,14 @@ if &wrap
   let s:L = "L0:redraw\<CR>:file\<CR>"
 " huyz 2011-07-03 Go to first line (just like in NextPage())
 "  au VimEnter * normal! L0
-  au VimEnter * normal! 1GL0
+  au VimEnter * normal! L0
 else
   noremap <SID>L Lg0:redraw<CR>:file<CR>
 " huyz 2011-07-03 Added to get <SID>NextPage() working right
   let s:L = "Lg0:redraw\<CR>:file\<CR>"
 " huyz 2011-07-03 Go to first line (just like in NextPage())
 "  au VimEnter * normal! Lg0
-  au VimEnter * normal! 1GLg0
+  au VimEnter * normal! Lg0
 endif
 
 " When reading from stdin don't consider the file modified.
