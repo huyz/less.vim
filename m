@@ -1,7 +1,4 @@
 #!/bin/sh
-# $RCSfile$ $Revision$ $Date$
-# zing 2011-07-03
-#
 # Filename:         m
 # Version:          0.2
 # Description:
