@@ -58,9 +58,8 @@
 #############################################################################
 
 # Implementation Notes:
-# - References $PAGER, $zsh_less_flags, $MEHOME, `mehome` executable from my
-#   environment setup but the defaults are fine.  Just ignore or delete the
-#   references.
+# - References $MEHOME, `mehome` executable from my environment setup but the
+#   defaults are fine.  Just ignore or delete the references.
 
 # Default is to invoke vim
 mode=vim
@@ -72,7 +71,7 @@ mode=vim
 # -r : handles ANSI color sequences
 # -e : exits second time hit end of file
 # -F : exits if less than screenful
-[ "$mode" = pager ] && LESS="${zsh_less_flags--diMQXj3z-3reF}" exec ${PAGER-less} "$@"
+#[ "$mode" = pager ] && LESS="${zsh_less_flags--diMQXj3z-3reF}" exec ${PAGER-less} "$@"
 
 # If on terminal
 if [ -t 1 ]; then
