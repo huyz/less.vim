@@ -109,10 +109,13 @@ if [ -t 1 ]; then
 
   # - no_plugin_maps: that's from distribution example; assume it turns off
   #   mappings from plugins.
+  # - --noplugin: actually, i want to disable plugins entirely because they're
+  #   getting in the way, minibufexpl for example.
   # - Turn off any statusbars, make searches case-smart, turn off tite
   #   have regular tabstop.
   DISPLAY= exec vim -R \
             --cmd 'let no_plugin_maps = 1' \
+            --noplugin \
             -c 'set laststatus=0 ignorecase smartcase ts=8' \
             -c "$MACRO" \
             "$@"
