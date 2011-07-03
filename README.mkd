@@ -1,12 +1,17 @@
 less.vim
 ========
-This repository consists of two files which provide improved versions
-of less.{vim,sh} distributed with vim.
+This is a better command-line pager, that's just as fast and easy to use as
+`less` but as colorful as `vim`.  You don't need to learn how to do vi/vim to
+use this.  In fact, the keybindings are almost the same as `less`.
 
 Why page with vim? To browse through files/stdin with full syntax highlighting
-and vim functionality. Why not just use vim? `less`-like keymappings are much
-quicker and easier for navigation: you only use single keystrokes; no control
-keys.
+and have access to vim functionality if/when you need it. Why not just use
+vim? `less`-like keymappings are much quicker and easier for navigation: you
+only use single keystrokes; no control keys.  Quitting is just 'q', believe it
+or not.
+
+This repository consists of two files which provide improved versions
+of less.{vim,sh} distributed with vim.
 
 * `m` : wrapper for `less.vim` script which lets you page through files or
     standard input as with `less` but with `vim` instead.
