@@ -79,7 +79,7 @@ if [ -t 1 ]; then
   # If only one argument and the file is small, we want to quit immediately after
   # displaying file, like `less -F` does
   if [ $# -eq 1 ]; then
-    [ -n "$LINES" ] || eval $(resize)
+    [ -n "$LINES" ] || LINES=$(stty size | cut -f1 "-d ")
     if [ -n "$LINES" ]; then
       if [ -r "$1" ]; then
         # CursorHold is to delay the quit long enough to display the text.
