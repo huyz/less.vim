@@ -11,7 +11,7 @@ only use single keystrokes; no control keys.  Quitting is just 'q', believe it
 or not.
 
 This repository consists of two files which provide improved versions
-of less.{vim,sh} distributed with vim.
+of less.{vim,sh}, written by Bram Moolenaar and distributed with vim.
 
 * `m` : wrapper for `less.vim` script which lets you page through files or
     standard input as with `less` but with `vim` instead.
