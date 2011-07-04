@@ -26,6 +26,10 @@ distributed with vim.
     `less.vim` script distributed with vim, with some bug fixes and better
     quitting behavior. See contents of files for details of modifications.
 
+Screenshots
+-----------
+![Paging less.vim with less.vim](less.vim/raw/master/img/screenshot-less.vim.png)
+
 Comments
 --------
 You can submit feedback on [GitHub](https://github.com/huyz/less.vim/issues) or
