@@ -127,6 +127,7 @@ if [ -t 1 ]; then
   DISPLAY= exec vim -R \
             --cmd 'let no_plugin_maps = 1' \
             --noplugin \
+            -c 'nmap <ESC>u :nohlsearch<cr>' \
             -c 'set laststatus=0 ignorecase smartcase ts=8' \
             -c "$MACRO" \
             "$@"
