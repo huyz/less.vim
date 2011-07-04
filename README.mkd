@@ -26,6 +26,11 @@ distributed with vim.
     `less.vim` script distributed with vim, with some bug fixes and better
     quitting behavior. See contents of files for details of modifications.
 
+Comments
+--------
+You can submit feedback on [GitHub](https://github.com/huyz/less.vim/issues) or
+[my blog entry](http://huyz.us/2011/a-less-like-pager-with-color-syntax-highlighting/).
+
 MIT License for 'm'
 -------------------
 Copyright (C) 2011 Huy Z  http://huyz.us/
