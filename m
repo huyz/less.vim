@@ -11,16 +11,16 @@
 #   vim.
 #
 # Platforms:        GNU/Linux, Mac OS X, Windows Cygwin (not yet tested)
-# Depends:          macros/less.vim from VIM distribution (preferably
-#                   my improved version)
+# Depends:          vim
 # Source:           https://github.com/huyz/less.vim
 # Author:           Huy Z  http://huyz.us/
 # Updated on:       2011-07-04
 # Created on:       2002-07-05
 #
 # Installation:
-# 1. Move or symlink 'm' into your path
-# 2. Move or symlink 'less.vim' into the same directory as 'm' or
+# 1. Install a recent vim, if necessary
+# 2. Move or symlink 'm' into your path
+# 3. Move or symlink 'less.vim' into the same directory as 'm' or
 #    into your ~/.vim/macros directory
 #
 # Usage:
