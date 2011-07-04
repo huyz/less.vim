@@ -1,7 +1,3 @@
-**UPDATE**: *Oops, looks like someone is already working on an improved
-version called
-[vimpager](http://www.vim.org/scripts/script.php?script_id=1723).*
-
 less.vim
 ========
 This is a better command-line pager than `less`: just as fast and easy to use
