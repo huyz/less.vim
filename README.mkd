@@ -23,9 +23,8 @@ distributed with vim.
     page if there's less than one page.) This file is an improved version of
     `less.sh` that is distributed with vim.
 *   `less.vim` : companion script to `m`.  It's an improved version of the
-    `less.vim` script distributed with vim that makes it easier and quicker to
-    navigate with single-keystrokes, as with `less`. See contents of files for
-    details of modifications.
+    `less.vim` script distributed with vim, with some bug fixes and better
+    quitting behavior. See contents of files for details of modifications.
 
 MIT License for 'm'
 -------------------
