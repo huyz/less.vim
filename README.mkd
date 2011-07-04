@@ -1,6 +1,6 @@
-**UPDATE**: Oops, looks like someone is already working on an improved
+**UPDATE**: *Oops, looks like someone is already working on an improved
 version called
-[vimpager](http://www.vim.org/scripts/script.php?script_id=1723).
+[vimpager](http://www.vim.org/scripts/script.php?script_id=1723).*
 
 less.vim
 ========
