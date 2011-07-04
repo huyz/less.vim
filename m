@@ -107,17 +107,17 @@ if [ -t 1 ]; then
     fi
   fi
 
+  # - Set options here that shouldn't be set for everyone in less.vim, e.g.
+  #   override potentially troublesome options from your ~/.vimrc:
+  #   Turn off any statusbars, make searches case-smart, have normal tabstop.
   # - no_plugin_maps: that's from distribution example; assume it turns off
   #   mappings from plugins.
   # - --noplugin: actually, i want to disable plugins entirely because they're
   #   getting in the way, minibufexpl for example.
-  # - Set some options (these are not in less.vim because some users may want
-  #   to keep their ~/.vimrc options):
-  #   Turn off any statusbars, make searches case-smart, have regular tabstop.
   DISPLAY= exec vim -R \
             --cmd 'let no_plugin_maps = 1' \
             --noplugin \
-            -c 'set laststatus=0 ignorecase smartcase' \
+            -c 'set laststatus=0 ignorecase smartcase ts=8' \
             -c "$MACRO" \
             "$@"
 

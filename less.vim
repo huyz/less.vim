@@ -9,9 +9,11 @@
 " Bugs Fixed:
 " - ':p' doesn't work as help says. So we map 'p' instead
 " - now starts first file on first line, as it does subsequent files
-" TODO:
+" Bugs Remaining:
 " - doesn't show filename when first starting.
-"
+" - 'g' has a one-second delay
+" - redraw() gives error if non-first file has fileencoding in modeline
+" - Returning to file with 'p' doesn't put you at the same spot you left it
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last Change:	2006 Dec 05
@@ -62,25 +64,17 @@ set nows
 let s:lz = &lz
 set lz
 
-" huyz 2011-07-04 Add some more sane options
-set ts=8
-set nomodeline modelines=0
-
 " Used after each command: put cursor at end and display position
 if &wrap
   noremap <SID>L L0:redraw<CR>:file<CR>
-" huyz 2011-07-03 Added to get <SID>NextPage() working right
-  let s:L = "L0:redraw\<CR>:file\<CR>"
 " huyz 2011-07-03 Go to first line (just like in NextPage())
 "  au VimEnter * normal! L0
-  au VimEnter * normal! L0
+  au VimEnter * normal! 1GL0
 else
   noremap <SID>L Lg0:redraw<CR>:file<CR>
-" huyz 2011-07-03 Added to get <SID>NextPage() working right
-  let s:L = "Lg0:redraw\<CR>:file\<CR>"
 " huyz 2011-07-03 Go to first line (just like in NextPage())
 "  au VimEnter * normal! Lg0
-  au VimEnter * normal! Lg0
+  au VimEnter * normal! 1GLg0
 endif
 
 " When reading from stdin don't consider the file modified.
@@ -126,18 +120,25 @@ fun! s:NextPage()
   if line(".") == line("$")
     if argidx() + 1 >= argc()
 "      quit
-      echomsg "Hit 'q' to quit"
+      echomsg "END OF FILES. Hit 'q' to quit."
     else
       next
       1
-      " XXX huyz 2011-07-03 Is there any easy way to call <SID>L?
-      exe "normal " . s:L
+      call s:DisplayStatus()
     endif
   else
     exe "normal! \<C-F>"
-    " XXX huyz 2011-07-03 Is there any easy way to call <SID>L?
-    exe "normal! " . s:L
+    call s:DisplayStatus()
   endif
+endfun
+fun! s:DisplayStatus()
+  if &wrap
+    exe "normal! L0"
+  else
+    exe "normal! Lg0"
+  endif
+  redraw
+  file
 endfun
 
 " Re-read file and page forward "tail -f"
