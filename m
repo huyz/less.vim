@@ -2,23 +2,26 @@
 # Filename:         m
 # Version:          0.2
 # Description:
-#   Wrapper for less.vim script which lets you page through files or standard
-#   input as with `less` but with `vim` instead, which gives you full access
-#   to vim's syntax highlighting and commands.
+#   Pages through files as with `less` but with `vim` instead, giving you vim's
+#   full colored syntax highlighting and vim commands if you need them.
+#   Even standard input gets syntax highlighting, if recognizable.
 #   It also acts as `less -F` and quits out immediately if a single file
 #   has less than a screenful.
-#   This is an improved version of less.sh that is distributed with vim.
+#   This file itself is an improved version of less.sh that is distributed with
+#   vim.
 #
 # Platforms:        GNU/Linux, Mac OS X, Windows Cygwin (not yet tested)
 # Depends:          macros/less.vim from VIM distribution (preferably
 #                   my improved version)
 # Source:           https://github.com/huyz/less.vim
 # Author:           Huy Z  http://huyz.us/
-# Updated on:       2011-07-03
+# Updated on:       2011-07-04
 # Created on:       2002-07-05
 #
 # Installation:
-# 1. Put it in your path
+# 1. Move or symlink 'm' into your path
+# 2. Move or symlink 'less.vim' into the same directory as 'm' or
+#    into your ~/.vim/macros directory
 #
 # Usage:
 # - To page through one or more files:
@@ -54,10 +57,6 @@
 
 #############################################################################
 
-# Implementation Notes:
-# - References $MEHOME, `mehome` executable from my environment setup but the
-#   defaults are fine.  Just ignore or delete the references.
-
 # Default is to invoke vim
 mode=vim
 
@@ -90,18 +89,29 @@ if [ -t 1 ]; then
     set -- -
   fi
 
-
-  # Macro location: try to find my modified less.vim first
-  MACRO=
-  if [ -e "$MEHOME/.vim/macros/less.vim" ]; then
+  # Try to find less.vim
+  [ -z "$MEHOME" ] && MEHOME=$HOME
+  case "$0" in
+    */*) arg0=$0 ;;
+      *) arg0=$(which $0) ;;
+  esac
+  MACRO="${arg0%/m}/less.vim"
+  if [ -r "$MACRO" ]; then
+    MACRO="so $MACRO"
+  elif [ -r "$MEHOME/.vim/macros/less.vim" ]; then
+    # Macro location: try to find my modified less.vim first
     MACRO="so $MEHOME/.vim/macros/less.vim"
   else
+    MACRO=
+    # huyz 2011-07-04 This is just for me -- just ignore it
     if hash mehome >& /dev/null; then
+      # Macro location: continue to try to find my modified less.vim
       MEHOME=`mehome`
-      if [ -e "$MEHOME/.vim/macros/less.vim" ]; then
+      if [ -r "$MEHOME/.vim/macros/less.vim" ]; then
         MACRO="so $MEHOME/.vim/macros/less.vim"
       fi
     fi
+    # Default to distribution
     if [ -z "$MACRO" ]; then
       MACRO='runtime! macros/less.vim'
     fi

@@ -1,28 +1,30 @@
 less.vim
 ========
-This is a better command-line pager, that's just as fast and easy to use as
-`less` but as colorful as `vim`.  You don't need to learn how to do vi/vim to
-use this.  In fact, the keybindings are almost the same as `less`.
+This is a better command-line pager than `less`: just as fast and easy to use
+as `less` but as colorful as `vim`.  You don't need to learn how to use
+vi/vim; the keybindings are almost the same as `less`.  Just use this whenever
+you'd normally use `less`.
 
-Why page with vim? To browse through files/stdin with full syntax highlighting
-and have access to vim functionality if/when you need it. Why not just use
-vim? `less`-like keymappings are much quicker and easier for navigation: you
-only use single keystrokes; no control keys.  Quitting is just 'q', believe it
-or not.
+Why is this built on top of `vim`? To browse through files with full colored
+syntax highlighting (even from standard input, if possible) and have access to
+vim functionality if you need it. Why not just use `vim`? `less`-like
+keymappings are much quicker and easier for navigation: you only use single
+keystrokes; no control keys. Quitting is just 'q', believe it or not.
 
-This repository consists of two files which provide improved versions
-of less.{vim,sh}, written by Bram Moolenaar and distributed with vim.
+This repository consists of two files which provide improved versions of
+less.{vim,sh}, originally conceived and written by Bram Moolenaar and
+distributed with vim.
 
-* `m` : wrapper for `less.vim` script which lets you page through files or
-    standard input as with `less` but with `vim` instead.
-    It sets some improved options such as smart-case search and unsets confusing
-    options potentially set by user in their `~/.vimrc` such as the statusbar.
-    It also acts as `less -F` and quits out immediately if a single file has
-    less than a screenful. This file is an improved version of `less.sh` that is
-    distributed with vim.
-* `less.vim` : improved version of the `less.vim` script distributed with vim
-    that makes it easier and quicker to navigate with single-keystrokes, as
-    with `less`. See contents of files for details of modifications.
+*   `m` : lets you page through files or standard input as with `less` (but
+    with `vim` instead). It sets some improved options such as smart-case
+    search and unsets confusing options potentially set by user in their
+    `~/.vimrc` such as the statusbar. It also acts as `less -F` and quits out
+    immediately if a single file has less than a screenful. This file is an
+    improved version of `less.sh` that is distributed with vim.
+*   `less.vim` : companion script to `m`.  It's an improved version of the
+    `less.vim` script distributed with vim that makes it easier and quicker to
+    navigate with single-keystrokes, as with `less`. See contents of files for
+    details of modifications.
 
 MIT License for 'm'
 -------------------

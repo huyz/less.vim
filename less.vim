@@ -1,7 +1,8 @@
-" Vim script to work like "less"
+" ---------------------------------------------------------------------------
+" See 'm' companion script for installation and usage instructions.
 "
-" Modified by: huyz 2011-07-03
-"   Fixed bugs and improved. Also, see 'm' companion script.
+" Modified By: huyz 2011-07-04
+"   Fixed bugs and improved the one distributed with vim.
 " Improvements:
 " - don't quit immediately when hitting bottom of last file; just display
 "   message
@@ -14,7 +15,9 @@
 " - 'g' has a one-second delay
 " - redraw() gives error if non-first file has fileencoding in modeline
 " - Returning to file with 'p' doesn't put you at the same spot you left it
-"
+" ---------------------------------------------------------------------------
+
+" Vim script to work like "less"
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last Change:	2006 Dec 05
 
