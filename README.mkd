@@ -28,7 +28,8 @@ distributed with vim.
 
 Screenshots
 -----------
-Paging `less.vim` with `less.vim`
+Paging `less.vim` with `less.vim`:
+
 ![less.vim screenshot](less.vim/raw/master/img/screenshot-less.vim.png)
 
 Comments
